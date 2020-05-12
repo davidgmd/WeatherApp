@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WeatherApp.Model
 {
-    public class AdministrativeArea
+    public class Area
     {
         public string ID { get; set; }
         public string LocalizedName { get; set; }
@@ -17,7 +17,7 @@ namespace WeatherApp.Model
         public string Type { get; set; }
         public int Rank { get; set; }
         public string LocalizedName { get; set; }
-        public Country Country { get; set; }
-        public AdministrativeArea AdministrativeArea { get; set; }
+        public Area Country { get; set; }
+        public Area AdministrativeArea { get; set; }
     }
 }
