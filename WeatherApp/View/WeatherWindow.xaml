@@ -19,6 +19,7 @@
             <TextBlock Text="{Binding Query, Mode=TwoWay}"/>
             <TextBox/>
             <Button Margin="0,10"
+                    Command="{Binding SearchCommand}"
                     Content="Search"/>
             <ListView>
                 <ListView.ItemTemplate>
@@ -38,7 +39,8 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Margin="0,10">
-                <TextBlock Text=""
+                <TextBlock DataContext="{StaticResource vm}" 
+                           Text="{Binding selectedCity.LocalizedName}"
                            Foreground="#f4f4f8"
                            FontSize="20"
                            Margin="20,0"/>
@@ -49,7 +51,7 @@
             </StackPanel>
             <TextBlock Grid.Column="1"
                        VerticalAlignment="Center"
-                       Text="{Binding Temperature.Metric.Value}"
+                       Text="{Binding Temperature.Metric.Value, StringFormat={}{0}ºC}"
                        Foreground="#f4f4f8"
                        FontSize="30"
                        Margin="20,0"/>
